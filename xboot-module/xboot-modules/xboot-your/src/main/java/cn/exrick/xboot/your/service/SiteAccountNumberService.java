@@ -23,4 +23,5 @@ public interface SiteAccountNumberService extends XbootBaseService<SiteAccountNu
     */
     Page<SiteAccountNumber> findByCondition(SiteAccountNumber siteAccountNumber, SearchVo searchVo, Pageable pageable);
 
+    List<SiteAccountNumber> selectBySite(String id,String type);
 }

@@ -31,7 +31,7 @@ public class SiteAccountPermissions extends XbootBaseEntity {
 
     @TableField("type")
     @ApiModelProperty(value = "type")
-    private Integer type;
+    private String type;
 
     @TableField("times")
     @ApiModelProperty(value = "times")

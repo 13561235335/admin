@@ -64,4 +64,10 @@ public class SiteAccountNumberServiceImpl implements SiteAccountNumberService {
         }, pageable);
     }
 
+    @Override
+    public List<SiteAccountNumber> selectBySite(String siteId,String type) {
+
+        return siteAccountNumberDao.selectBySite(siteId,type);
+    }
+
 }

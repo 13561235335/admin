@@ -33,7 +33,7 @@ public class XbootGenerator {
      * 实体类名
      * 建议仅需修改
      */
-    private static final String CLASS_NAME = "Student";
+    private static final String CLASS_NAME = "Site";
 
     /**
      * 类说明描述
@@ -42,7 +42,7 @@ public class XbootGenerator {
     private static final String DESCRIPTION = "测试";
 
     /**
-     * 作者名
+     * 作者
      * 建议仅需修改
      */
     private static final String AUTHOR = "Exrick";
