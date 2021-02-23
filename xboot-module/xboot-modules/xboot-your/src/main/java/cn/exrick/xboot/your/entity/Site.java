@@ -29,6 +29,14 @@ public class Site extends XbootBaseEntity {
     @ApiModelProperty(value = "ip")
     private String ip;
 
+    @TableField("url")
+    @ApiModelProperty(value = "url")
+    private String url;
+
+    @TableField("downloadUrl")
+    @ApiModelProperty(value = "downloadUrl")
+    private String downloadUrl;
+
     @TableField("switch_one")
     @ApiModelProperty(value = "switch_one")
     private Integer switchOne;
