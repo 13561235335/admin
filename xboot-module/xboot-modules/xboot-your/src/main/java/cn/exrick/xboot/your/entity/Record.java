@@ -1,10 +1,7 @@
 package cn.exrick.xboot.your.entity;
 
-
 import cn.exrick.xboot.core.base.XbootBaseEntity;
-import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiModel;
@@ -13,10 +10,9 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import java.time.LocalDateTime;
 
 /**
- * @author admin
+ * @author lw
  */
 @Data
 @Entity
@@ -28,7 +24,6 @@ import java.time.LocalDateTime;
 public class Record extends XbootBaseEntity {
 
     private static final long serialVersionUID = 1L;
-
     @TableField("site_id")
     @ApiModelProperty(value = "site_id")
     private String siteId;
@@ -60,6 +55,5 @@ public class Record extends XbootBaseEntity {
     @TableField("analysis_method")
     @ApiModelProperty(value = "analysis_method")
     private String analysisMethod;
-
 
 }

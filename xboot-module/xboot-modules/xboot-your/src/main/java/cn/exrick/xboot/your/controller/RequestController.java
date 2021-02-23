@@ -1,22 +1,15 @@
 package cn.exrick.xboot.your.controller;
 
-import cn.exrick.xboot.core.base.XbootBaseController;
-import cn.exrick.xboot.core.common.utils.PageUtil;
 import cn.exrick.xboot.core.common.utils.ResultUtil;
-import cn.exrick.xboot.core.common.vo.PageVo;
 import cn.exrick.xboot.core.common.vo.Result;
-import cn.exrick.xboot.core.common.vo.SearchVo;
-import cn.exrick.xboot.your.dao.SiteAccountNumberDao;
-import cn.exrick.xboot.your.entity.Record;
 import cn.exrick.xboot.your.entity.Site;
 import cn.exrick.xboot.your.entity.SiteAccountNumber;
-import cn.exrick.xboot.your.entity.SiteAccountPermissions;
+
 import cn.exrick.xboot.your.service.*;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -41,15 +34,15 @@ public class RequestController {
 
 
     @Autowired
-    private SiteAccountNumberService siteAccountNumberService;
+    private ISiteAccountNumberService siteAccountNumberService;
     @Autowired
-    private SiteService siteService;
+    private ISiteService siteService;
     @Autowired
-    private SiteAccountPermissionsService siteAccountPermissionsService;
+    private ISiteAccountPermissionsService siteAccountPermissionsService;
     @Autowired
-    private RequestUserService requestUserService;
+    private IRequestUserService requestUserService;
     @Autowired
-    private RecordService recordService;
+    private IRecordService recordService;
 
     Map<String, String> siteswiitch = Collections.synchronizedMap(new HashMap<String, String>());
 
@@ -70,13 +63,13 @@ public class RequestController {
             default :
         }
 
-        Stream<Site> siteStream = siteService.findByCondition(site, null, null).get();
-        List<Site> collect = siteStream.collect(Collectors.toList());
-        if(collect == null && collect.size() == 0){
+        List<Site> sites = siteService.list();
+        if(sites == null && sites.size() == 0){
             return objectResultUtil.setErrorMsg(-1,"解析失败");
         }
-        for (Site site1 : collect) {
-            List<SiteAccountNumber> list =  siteAccountNumberService.selectBySite(site.getId(),type);
+        for (Site site1 : sites) {
+//            List<SiteAccountNumberJPA> list =  siteAccountNumberService.selectBySite(site.getId(),type);
+            List<SiteAccountNumber> list =  siteAccountNumberService.list();
             if(list !=  null && list.size() > 0){
                 return objectResultUtil.setSuccessMsg("a");
             }

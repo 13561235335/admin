@@ -34,19 +34,19 @@ public class XbootMPGenerator {
      * 实体类名
      * 建议仅需修改
      */
-    private static final String CLASS_NAME = "Student";
+    private static final String CLASS_NAME = "SiteAccountPermissions";
 
     /**
      * 类说明描述
      * 建议仅需修改
      */
-    private static final String DESCRIPTION = "测试";
+    private static final String DESCRIPTION = "站点帐号权限";
 
     /**
      * 作者名
      * 建议仅需修改
      */
-    private static final String AUTHOR = "Exrick";
+    private static final String AUTHOR = "lw";
 
     /**
      * 是否生成树形结构相关接口
@@ -58,7 +58,7 @@ public class XbootMPGenerator {
      * 数据库表名前缀
      * 下方请根据需要修改
      */
-    private static final String TABLE_PRE = "t_";
+    private static final String TABLE_PRE = "";
 
     /**
      * 主键类型

@@ -12,7 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 /**
- * @author admin
+ * @author lw
  */
 @Data
 @Entity
@@ -36,4 +36,5 @@ public class RequestUser extends XbootBaseEntity {
     @TableField("salt_value")
     @ApiModelProperty(value = "salt_value")
     private String saltValue;
+
 }

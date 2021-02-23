@@ -12,7 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 /**
- * @author admin
+ * @author lw
  */
 @Data
 @Entity
@@ -93,5 +93,4 @@ public class Site extends XbootBaseEntity {
     @ApiModelProperty(value = "taobao_store_name")
     private String taobaoStoreName;
 
-  
 }

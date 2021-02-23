@@ -12,7 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 /**
- * @author Exrick
+ * @author lw
  */
 @Data
 @Entity
@@ -24,6 +24,7 @@ import javax.persistence.Table;
 public class SiteAccountPermissions extends XbootBaseEntity {
 
     private static final long serialVersionUID = 1L;
+
 
     @TableField("site_account_id")
     @ApiModelProperty(value = "site_account_id")
