@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -27,8 +26,8 @@ public class ISiteServiceImpl extends ServiceImpl<SiteMapper, Site> implements I
     private SiteMapper siteMapper;
 
     @Override
-    public List<SiteAccountDto> getAvailableSiteAccount(String siteType) {
+    public List<SiteAccountDto> getAvailableSiteAccount(String siteType, int value) {
 
-        return siteMapper.getAvailableSiteAccount(siteType);
+        return siteMapper.getAvailableSiteAccount(siteType,value);
     }
 }

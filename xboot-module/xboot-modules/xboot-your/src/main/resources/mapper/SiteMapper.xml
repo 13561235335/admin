@@ -36,11 +36,14 @@
         LEFT JOIN site_account_permissions sap ON sap.site_account_id = san.id
         WHERE
         site.del_flag = '0'
-        AND site."参数1" = '1'
+
+<!--        动态赋值字段名-->
+        AND site.+#{siteType} = '1'
+        
         AND san.del_flag = '0'
         AND san.state = '0'
         AND sap.del_flag = '0'
-        AND sap.type = "参数2"
+        AND sap.type = #{value}
         AND sap.state = '0'
 
     </select>

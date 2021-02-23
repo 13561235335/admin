@@ -2,6 +2,7 @@ package cn.exrick.xboot.your.controller;
 
 import cn.exrick.xboot.core.common.utils.ResultUtil;
 import cn.exrick.xboot.core.common.vo.Result;
+import cn.exrick.xboot.your.dto.AnalysisTypeENUM;
 import cn.exrick.xboot.your.dto.SiteAccountDto;
 import cn.exrick.xboot.your.entity.Site;
 import cn.exrick.xboot.your.entity.SiteAccountNumber;
@@ -74,6 +75,7 @@ public class RequestController {
         }
         String siteType = "1";
         String link = "1";
+
         List<SiteAccountDto> list = getAvailableSiteAccount(link,siteType);
 
         return new ResultUtil<String>().setData(null);
@@ -82,15 +84,23 @@ public class RequestController {
     /**
      * 查出可用的站点帐号，随机调用一个
      * @param link
-     * @param siteType
+     * @param siteType 解析图片源类型
      * @return
      */
     private List<SiteAccountDto> getAvailableSiteAccount(String link, String siteType) {
 
         List<SiteAccountDto> list = new ArrayList<>();
 
-        list = siteService.getAvailableSiteAccount(siteType);
+        Integer value = Integer.valueOf(siteType);
+        AnalysisTypeENUM analysisTypeENUM = AnalysisTypeENUM.getAnalysisTypeENUM(value);
 
+        //获取到 当前可用的帐号集合
+        list = siteService.getAvailableSiteAccount(analysisTypeENUM.getEnglish(),analysisTypeENUM.getValue());
+
+        //随机获取，分配帐号等
+        long systemTime = System.currentTimeMillis();
+        long index = systemTime % list.size();
+        SiteAccountDto siteAccountDto = list.get((int) index);
 
         return null;
     }
