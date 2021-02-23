@@ -1,6 +1,7 @@
 package cn.exrick.xboot.your.entity;
 
 import cn.exrick.xboot.core.base.XbootBaseEntity;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiModel;
@@ -23,5 +24,29 @@ import javax.persistence.Table;
 public class SiteAccountPermissions extends XbootBaseEntity {
 
     private static final long serialVersionUID = 1L;
+
+    @TableField("site_account_id")
+    @ApiModelProperty(value = "site_account_id")
+    private String siteAccountId;
+
+    @TableField("type")
+    @ApiModelProperty(value = "type")
+    private Integer type;
+
+    @TableField("times")
+    @ApiModelProperty(value = "times")
+    private Integer times;
+
+    @TableField("total_times")
+    @ApiModelProperty(value = "total_times")
+    private Integer totalTimes;
+
+    @TableField("usage_times_of_day")
+    @ApiModelProperty(value = "usage_times_of_day")
+    private Integer usageTimesOfDay;
+
+    @TableField("state")
+    @ApiModelProperty(value = "state")
+    private Boolean state;
 
 }

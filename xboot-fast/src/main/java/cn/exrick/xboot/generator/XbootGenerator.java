@@ -33,19 +33,19 @@ public class XbootGenerator {
      * 实体类名
      * 建议仅需修改
      */
-    private static final String CLASS_NAME = "Student";
+    private static final String CLASS_NAME = "Record";
 
     /**
      * 类说明描述
      * 建议仅需修改
      */
-    private static final String DESCRIPTION = "测试";
+    private static final String DESCRIPTION = "记录表";
 
     /**
      * 作者名
      * 建议仅需修改
      */
-    private static final String AUTHOR = "Exrick";
+    private static final String AUTHOR = "admin";
 
     /**
      * 是否生成树形结构相关接口
@@ -57,7 +57,7 @@ public class XbootGenerator {
      * 数据库表名前缀
      * 下方请根据需要修改
      */
-    private static final String TABLE_PRE = "t_";
+    private static final String TABLE_PRE = "";
 
     /**
      * 主键类型
