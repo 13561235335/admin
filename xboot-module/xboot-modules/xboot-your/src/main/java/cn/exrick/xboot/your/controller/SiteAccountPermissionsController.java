@@ -21,7 +21,7 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Slf4j
 @RestController
-@Api(tags = "测试管理接口")
+@Api(tags = "站点帐号权限管理接口")
 @RequestMapping("/xboot/siteAccountPermissions")
 @Transactional
 public class SiteAccountPermissionsController extends XbootBaseController<SiteAccountPermissions, String> {

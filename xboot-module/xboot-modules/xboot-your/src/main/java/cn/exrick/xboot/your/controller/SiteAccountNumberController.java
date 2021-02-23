@@ -21,7 +21,7 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Slf4j
 @RestController
-@Api(tags = "测试管理接口")
+@Api(tags = "站点帐号管理接口")
 @RequestMapping("/xboot/siteAccountNumber")
 @Transactional
 public class SiteAccountNumberController extends XbootBaseController<SiteAccountNumber, String> {

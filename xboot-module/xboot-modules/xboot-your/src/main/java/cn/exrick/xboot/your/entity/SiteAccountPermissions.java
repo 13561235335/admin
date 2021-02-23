@@ -20,7 +20,7 @@ import javax.persistence.Table;
 @DynamicUpdate
 @Table(name = "site_account_permissions")
 @TableName("site_account_permissions")
-@ApiModel(value = "测试")
+@ApiModel(value = "站点帐号权限")
 public class SiteAccountPermissions extends XbootBaseEntity {
 
     private static final long serialVersionUID = 1L;
