@@ -1,6 +1,7 @@
 package cn.exrick.xboot.your.serviceimpl;
 
 
+import cn.exrick.xboot.your.dto.SiteAccountDto;
 import cn.exrick.xboot.your.entity.Site;
 import cn.exrick.xboot.your.mapper.SiteMapper;
 import cn.exrick.xboot.your.service.ISiteService;
@@ -24,4 +25,10 @@ public class ISiteServiceImpl extends ServiceImpl<SiteMapper, Site> implements I
 
     @Autowired
     private SiteMapper siteMapper;
+
+    @Override
+    public List<SiteAccountDto> getAvailableSiteAccount(String siteType) {
+
+        return siteMapper.getAvailableSiteAccount(siteType);
+    }
 }

@@ -33,12 +33,12 @@ public class Site extends XbootBaseEntity {
     @ApiModelProperty(value = "url")
     private String url;
 
-    @TableField("downloadUrl")
+    @TableField("download_url")
     @ApiModelProperty(value = "downloadUrl")
     private String downloadUrl;
 
     @TableField("switch_one")
-    @ApiModelProperty(value = "switch_one")
+    @ApiModelProperty(value = "switch_one 0-不可用 1-可用")
     private Integer switchOne;
 
     @TableField("switch_two")
@@ -86,7 +86,7 @@ public class Site extends XbootBaseEntity {
     private Integer weightValue;
 
     @TableField("site_state")
-    @ApiModelProperty(value = "site_state")
+    @ApiModelProperty(value = "site_state 0-可用 1-不可用")
     private Boolean siteState;
 
     @TableField("taobao_store_name")

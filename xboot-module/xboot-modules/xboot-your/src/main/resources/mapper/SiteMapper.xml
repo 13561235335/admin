@@ -1,5 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.exrick.xboot.modules.your.mapper.SiteMapper">
+<mapper namespace="cn.exrick.xboot.your.mapper.SiteMapper">
+
+<!--    &lt;!&ndash; 通用查询映射结果 &ndash;&gt;-->
+<!--    <resultMap id="AvailableSiteAccount" type="cn.exrick.xboot.your.dto.SiteAccountDto">-->
+<!--        <result column="ip" property="ip" />-->
+<!--        <result column="url" property="url" />-->
+<!--        <result column="downloadUrl" property="download_url" />-->
+<!--        <result column="taobaoStoreName" property="taobao_store_name" />-->
+<!--        <result column="siteAccount" property="siteAccount" />-->
+<!--        <result column="password" property="password" />-->
+<!--        <result column="cookie" property="cookie" />-->
+<!--        <result column="type" property="type" />-->
+<!--        <result column="times" property="times" />-->
+<!--        <result column="totalTimes" property="total_times" />-->
+<!--        <result column="usageTimesOfDay" property="usage_times_of_day" />-->
+<!--    </resultMap>-->
+
+    <select id="getAvailableSiteAccount"  parameterType="String" resultType="cn.exrick.xboot.your.dto.SiteAccountDto">
+        SELECT
+        site.ip,
+        site.url,
+        site.download_url,
+        site.taobao_store_name,
+        san.cookie,
+        san.`password`,
+        san.site_account,
+        sap.type,
+        sap.times,
+        sap.total_times,
+        sap.usage_times_of_day
+        FROM
+        site
+        LEFT JOIN site_account_number san ON san.site_id = site.id
+        LEFT JOIN site_account_permissions sap ON sap.site_account_id = san.id
+        WHERE
+        site.del_flag = '0'
+        AND site."参数1" = '1'
+        AND san.del_flag = '0'
+        AND san.state = '0'
+        AND sap.del_flag = '0'
+        AND sap.type = "参数2"
+        AND sap.state = '0'
+
+    </select>
 
 </mapper>

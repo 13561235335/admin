@@ -47,7 +47,7 @@ public class SiteAccountPermissions extends XbootBaseEntity {
     private Integer usageTimesOfDay;
 
     @TableField("state")
-    @ApiModelProperty(value = "state")
+    @ApiModelProperty(value = "state 0-可用 1-不可用")
     private Boolean state;
 
 }

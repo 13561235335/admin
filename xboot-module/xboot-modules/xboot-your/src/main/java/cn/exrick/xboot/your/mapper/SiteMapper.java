@@ -1,5 +1,6 @@
 package cn.exrick.xboot.your.mapper;
 
+import cn.exrick.xboot.your.dto.SiteAccountDto;
 import cn.exrick.xboot.your.entity.Site;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
@@ -11,4 +12,5 @@ import java.util.List;
  */
 public interface SiteMapper extends BaseMapper<Site> {
 
+    List<SiteAccountDto> getAvailableSiteAccount(String siteType);
 }

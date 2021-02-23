@@ -2,6 +2,7 @@ package cn.exrick.xboot.your.controller;
 
 import cn.exrick.xboot.core.common.utils.ResultUtil;
 import cn.exrick.xboot.core.common.vo.Result;
+import cn.exrick.xboot.your.dto.SiteAccountDto;
 import cn.exrick.xboot.your.entity.Site;
 import cn.exrick.xboot.your.entity.SiteAccountNumber;
 
@@ -15,10 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -74,8 +72,28 @@ public class RequestController {
                 return objectResultUtil.setSuccessMsg("a");
             }
         }
-
+        String siteType = "1";
+        String link = "1";
+        List<SiteAccountDto> list = getAvailableSiteAccount(link,siteType);
 
         return new ResultUtil<String>().setData(null);
     }
+
+    /**
+     * 查出可用的站点帐号，随机调用一个
+     * @param link
+     * @param siteType
+     * @return
+     */
+    private List<SiteAccountDto> getAvailableSiteAccount(String link, String siteType) {
+
+        List<SiteAccountDto> list = new ArrayList<>();
+
+        list = siteService.getAvailableSiteAccount(siteType);
+
+
+        return null;
+    }
+
+
 }
