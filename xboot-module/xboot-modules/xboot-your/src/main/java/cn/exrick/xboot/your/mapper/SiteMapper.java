@@ -12,5 +12,5 @@ import java.util.List;
  */
 public interface SiteMapper extends BaseMapper<Site> {
 
-    List<SiteAccountDto> getAvailableSiteAccount(String siteType, int value);
+    List<SiteAccountDto> getAvailableSiteAccount(String value);
 }

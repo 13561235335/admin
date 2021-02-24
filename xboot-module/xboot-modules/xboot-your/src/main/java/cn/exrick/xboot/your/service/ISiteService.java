@@ -12,5 +12,5 @@ import java.util.List;
  */
 public interface ISiteService extends IService<Site> {
 
-    List<SiteAccountDto> getAvailableSiteAccount(String siteType, int value);
+    List<SiteAccountDto> getAvailableSiteAccount(String siteType);
 }

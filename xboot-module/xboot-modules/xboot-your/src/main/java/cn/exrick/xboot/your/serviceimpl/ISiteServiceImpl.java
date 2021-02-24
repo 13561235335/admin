@@ -26,8 +26,8 @@ public class ISiteServiceImpl extends ServiceImpl<SiteMapper, Site> implements I
     private SiteMapper siteMapper;
 
     @Override
-    public List<SiteAccountDto> getAvailableSiteAccount(String siteType, int value) {
+    public List<SiteAccountDto> getAvailableSiteAccount(String siteType) {
 
-        return siteMapper.getAvailableSiteAccount(siteType,value);
+        return siteMapper.getAvailableSiteAccount(siteType);
     }
 }

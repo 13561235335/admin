@@ -91,18 +91,16 @@ public class RequestController {
 
         List<SiteAccountDto> list = new ArrayList<>();
 
-        Integer value = Integer.valueOf(siteType);
-        AnalysisTypeENUM analysisTypeENUM = AnalysisTypeENUM.getAnalysisTypeENUM(value);
-
+        AnalysisTypeENUM analysisTypeENUM = AnalysisTypeENUM.getAnalysisTypeENUM(siteType);
         //获取到 当前可用的帐号集合
-        list = siteService.getAvailableSiteAccount(analysisTypeENUM.getEnglish(),analysisTypeENUM.getValue());
+        list = siteService.getAvailableSiteAccount(String.valueOf(analysisTypeENUM.getValue()));
 
         //随机获取，分配帐号等
         long systemTime = System.currentTimeMillis();
         long index = systemTime % list.size();
         SiteAccountDto siteAccountDto = list.get((int) index);
 
-        return null;
+        return list;
     }
 
 
